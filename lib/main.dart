@@ -1,4 +1,5 @@
 import 'package:device_features_app/providers/places_provider.dart';
+import 'package:device_features_app/screens/add_place_screen.dart';
 import 'package:device_features_app/screens/places_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -12,9 +13,14 @@ class MyApp extends StatelessWidget {
       value: PlacesProvider(),
       child: MaterialApp(
         title: 'Device Features',
-        theme:
-            ThemeData(primarySwatch: Colors.indigo, accentColor: Colors.amber),
+        theme: ThemeData(
+          primarySwatch: Colors.green,
+          accentColor: Colors.amber,
+        ),
         home: PlacesListScreen(),
+        routes: {
+          AddPlaceScreen.routeName: (ctx) => AddPlaceScreen(),
+        },
       ),
     );
   }
